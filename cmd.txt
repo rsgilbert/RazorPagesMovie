@@ -1,0 +1,6 @@
+dotnet --version
+dotnet new webApp -o myHelloWebApp --no-https
+dotnet watch run
+
+// Trusts the HTTPS development certificate
+dotnet -dev-certs https --trust
