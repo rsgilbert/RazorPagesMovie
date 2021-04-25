@@ -17,3 +17,4 @@ dotnet add package Microsoft.Extensions.Logging.Debug
 // end installations
 
 
+// scaffold CRUD pages for Movie Model
