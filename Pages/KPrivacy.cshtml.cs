@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace RazorPagesMovie.Pages
 {
-    public class PrivacyModel : PageModel
+    public class KPrivacyModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<KPrivacyModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public KPrivacyModel(ILogger<KPrivacyModel> logger)
         {
             _logger = logger;
         }

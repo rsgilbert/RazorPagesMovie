@@ -18,3 +18,8 @@ dotnet add package Microsoft.Extensions.Logging.Debug
 
 
 // scaffold CRUD pages for Movie Model
+dotnet aspnet-codegenerator razorpage -m Movie -dc RazorPagesMovieContext -udl -outDir Pages/Movies --referenceScriptLibraries -sqlite
+
+// Create initial database schema using EF's migration feature
+dotnet ef migrations add InitialCreate
+dotnet ef database update
