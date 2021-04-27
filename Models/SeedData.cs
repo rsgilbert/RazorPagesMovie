@@ -36,7 +36,7 @@ namespace RazorPagesMovie.Models
                     },
                     new Movie
                     {
-                        Title = "Harry Potter and the Chamber of Secrets",
+                        Title = "Chamber of Secrets",
                         ReleaseDate=DateTime.Parse("2008-4-17"),
                         Genre="Magical Series",
                         Price=80000
