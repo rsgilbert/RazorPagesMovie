@@ -23,3 +23,19 @@ dotnet aspnet-codegenerator razorpage -m Movie -dc RazorPagesMovieContext -udl -
 // Create initial database schema using EF's migration feature
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+
+
+// List package references of a specific / current project, that is,
+// it shows what packages are installed or used by the current / specified project
+dotnet list package
+
+
+// Installs a NuGet package for runtime RuntimeCompilation
+// Useful if you want to allow recompiling the code when changes are made to the code
+// You will still need to reload the browser if you rely on this package alone, look into LiveReload
+dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+
+
+// LiveReload package to allow automatic refresh of browser when changes are made to the code
+dotnet add package Westwind.AspNetCore.LiveReload
+

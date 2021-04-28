@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Westwind.AspNetCore.LiveReload;
+
+
 
 namespace RazorPagesMovie
 {
@@ -26,11 +30,20 @@ namespace RazorPagesMovie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            IMvcBuilder builder = services.AddRazorPages();
 
             // Use SqLite for development and SQLServer for production
             if(Environment.IsDevelopment())
             {
+                // Configure LiveReload
+                // https://github.com/RickStrahl/Westwind.AspnetCore.LiveReload
+                services.AddLiveReload();
+
+
+                // for runtime compilation, ie, watching file changes
+                // Note that you will still need to reload the page in the browser 
+                builder.AddRazorRuntimeCompilation();
+
                 services.AddDbContext<RazorPagesMovieContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("RazorPagesMovieContext")));
             }
@@ -47,6 +60,10 @@ namespace RazorPagesMovie
         {
             if (env.IsDevelopment())
             {
+                // LiveReload
+                // https://github.com/RickStrahl/Westwind.AspnetCore.LiveReload
+                app.UseLiveReload();
+                
                 app.UseDeveloperExceptionPage();
             }
             else
