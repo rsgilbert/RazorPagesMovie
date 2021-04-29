@@ -25,21 +25,24 @@ namespace RazorPagesMovie.Models
                         Title = "Drunken Master",
                         ReleaseDate = DateTime.Parse("1990-2-23"),
                         Genre="Action",
-                        Price=1.2M
+                        Price=1.2M,
+                        Rating="R"
                     },
                     new Movie
                     {
                         Title="Me and Rebekah",
                         ReleaseDate=DateTime.Parse("1991-3-18"),
                         Genre="Romance",
-                        Price=30M
+                        Price=30M,
+                        Rating="PG"
                     },
                     new Movie
                     {
                         Title = "Chamber of Secrets",
                         ReleaseDate=DateTime.Parse("2008-4-17"),
                         Genre="Magical Series",
-                        Price=80000
+                        Price=80000,
+                        Rating="XXX"
                     }
                 );
                 context.SaveChanges();

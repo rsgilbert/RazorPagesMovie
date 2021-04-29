@@ -39,3 +39,9 @@ dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
 // LiveReload package to allow automatic refresh of browser when changes are made to the code
 dotnet add package Westwind.AspNetCore.LiveReload
 
+// Drop and recreate database, mainly for sqlite (for development environment)
+-> Delete migrations folder
+-> Stop any running app (stop dotnet watch/run) 
+dotnet ef database drop
+dotnet ef migrations add InitialCreate
+dotnet ef database update
