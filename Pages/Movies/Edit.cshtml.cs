@@ -33,12 +33,15 @@ namespace RazorPagesMovie.Pages_Movies
 
             if (Movie == null)
             {
+
                 return NotFound();
             }
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
+
+
+        // jk To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
